@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  background-color: lightseagreen;
+  padding: 1rem;
+}
+
+header a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
