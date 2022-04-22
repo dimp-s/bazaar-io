@@ -9,6 +9,7 @@ import Badge from 'react-bootstrap/esm/Badge';
 import Nav from 'react-bootstrap/Nav';
 import React from 'react';
 import { Store } from './Store';
+import CartScreen from './Screens/CartScreen';
 function App() {
   //initial cart state and context to handle change in app.
   //imported created store context
@@ -40,6 +41,7 @@ function App() {
           <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
+              <Route path="/cart" element={<CartScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>

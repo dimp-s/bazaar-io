@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Rating from '../Components/Rating';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
@@ -28,6 +28,7 @@ const reducer = (state, action) => {
   }
 };
 export default function ProductScreen() {
+  const navigate = useNavigate();
   //define hook to use with react router dom
   const params = useParams();
   const { slug } = params;
@@ -72,6 +73,8 @@ export default function ProductScreen() {
       type: 'CART_ADD_ITEM',
       payload: { ...product, quantity },
     });
+    //redirect user after adding to cart using use Navigate
+    navigate('/cart');
   };
 
   return loading ? (
