@@ -3,14 +3,41 @@
   padding: 0;
   font-family: 'Open Sans', sans-serif;
 }
+.site-container {
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
+.btn-primary {
+  background-color: teal;
+  color: white;
+}
 
-header {
-  background-color: lightseagreen;
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  border: 1px gray solid;
+  margin: 1rem;
+}
+
+.rating span {
+  color: #ffac00;
+}
+
+.product img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.product-info {
   padding: 1rem;
 }
 
-header a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
+.img-large {
+  max-width: 100%;
 }
