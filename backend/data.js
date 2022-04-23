@@ -3,7 +3,7 @@
 const data = {
   products: [
     {
-      _id: '1',
+      // _id: '1',
       name: 'tuddrom Mo3',
       slug: 'tuddrom-Mo3',
       category: 'Electronics',
@@ -16,7 +16,7 @@ const data = {
       countInStock: 4,
     },
     {
-      _id: '2',
+      // _id: '2',
       name: 'tuddrom Mo2',
       slug: 'tuddrom-Mo2',
       category: 'Electronics',
@@ -29,7 +29,7 @@ const data = {
       countInStock: 0,
     },
     {
-      _id: '3',
+      // _id: '3',
       name: 'tuddrom R3',
       slug: 'tuddrom-R3',
       category: 'Electronics',
