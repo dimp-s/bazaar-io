@@ -10,6 +10,7 @@ import Nav from 'react-bootstrap/Nav';
 import React from 'react';
 import { Store } from './Store';
 import CartScreen from './Screens/CartScreen';
+import SigninScreen from './Screens/SigninScreen';
 function App() {
   //initial cart state and context to handle change in app.
   //imported created store context
@@ -43,6 +44,7 @@ function App() {
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/" element={<HomeScreen />} />
+              <Route path="/signin" element={<SigninScreen />} />
             </Routes>
           </Container>
         </main>
