@@ -1,32 +1,27 @@
 import express from 'express';
 import data from './data.js';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import seedRouter from './routes/seedRoutes.js';
+import productRouter from './routes/productRoutes.js';
+
+//connecting to mongodb cloud atlas
+dotenv.config();
+//returns promise
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log('connected to Database');
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
 
 const app = express();
+app.use(`/api/seed`, seedRouter);
 
 //retrieves data through provided link from request
-app.get('/api/products', (req, res) => {
-  res.send(data.products);
-});
-
-//to get data from single product from backend
-app.get('/api/products/slug/:slug', (req, res) => {
-  const product = data.products.find((item) => item.slug === req.params.slug);
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product not Found! ' });
-  }
-});
-
-//to get items in current cart for add to cart
-app.get('/api/products/:id', (req, res) => {
-  const product = data.products.find((item) => item._id === req.params.id);
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product not Found! ' });
-  }
-});
+app.use(`/api/products`, productRouter);
 
 //define port to respond for backend
 const port = process.env.PORT || 5000;
