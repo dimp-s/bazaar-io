@@ -1,6 +1,22 @@
+//for pw encryption
+import bcrypt from 'bcryptjs';
 //create an object to return products
 //underscore id to make mongo db compatible
 const data = {
+  users: [
+    {
+      name: 'Dipesh Khadgi',
+      email: 'admin@gmail.com',
+      password: bcrypt.hashSync('asdfgh'),
+      isAdmin: true,
+    },
+    {
+      name: 'yub Mohanjan',
+      email: 'yub@gmail.com',
+      password: bcrypt.hashSync('asdfgh'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
       // _id: '1',
