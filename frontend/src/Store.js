@@ -3,6 +3,10 @@ import React, { createContext } from 'react';
 export const Store = createContext();
 //default cart state
 const initialState = {
+  //check if a user is logged in
+  userInfo: localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo'))
+    : null,
   cart: {
     //get current cart from local storage
     cartItems: localStorage.getItem('cartItems')
@@ -44,6 +48,11 @@ function reducer(state, action) {
         },
       };
     }
+    case 'USER_SIGNIN':
+      //update state and set userInfo fromm backend
+      return { ...state, userInfo: action.payload };
+    case 'USER_SIGNOUT':
+      return { ...state, userInfo: null };
     default:
       return state;
   }
